@@ -1,6 +1,7 @@
 # node js dependencies
 node_modules/
-
+src/Components/Apps/__snapshots__/
+coverage/
 # lock dependence
 package-lock.json
 yarn.json
