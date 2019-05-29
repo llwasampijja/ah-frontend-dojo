@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/andela/ah-frontend-dojo.svg?branch=task%2F%23165273520-travis-ci-setup)](https://travis-ci.com/andela/ah-frontend-dojo) [![Maintainability](https://api.codeclimate.com/v1/badges/bb975aa777e8d8d8909a/maintainability)](https://codeclimate.com/github/andela/ah-frontend-dojo/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/bb975aa777e8d8d8909a/test_coverage)](https://codeclimate.com/github/andela/ah-frontend-dojo/test_coverage)
+
 Authors Haven
 =======
 Author's haven is a Social platform for the creative at heart. This platform allows registered members to write and publish articles, read articles, rate articles, follow users, like and/or dislike articles, and bookmark articles. Non-registered users can view articles. A user can register using email address, or using their preferred social media account.
