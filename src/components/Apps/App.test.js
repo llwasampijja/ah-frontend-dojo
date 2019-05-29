@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import App from './App';
+import App from './App'
 
 // test to check if the App component matches the snapshot
 describe('App Component', () => {
@@ -8,4 +8,4 @@ describe('App Component', () => {
     const component = shallow(<App />);
     expect(component).toMatchSnapshot();
   });
-});
+})
