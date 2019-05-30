@@ -5,6 +5,8 @@ module.exports = {
   resolve: {
     alias: {
       assets: path.resolve(__dirname, 'src/assets/'),
+      components: path.resolve(__dirname, 'src/components/'),
+      pages: path.resolve(__dirname, 'src/pages/'),
     },
   },
   module: {
@@ -40,4 +42,7 @@ module.exports = {
       filename: './index.html',
     }),
   ],
+  devServer: {
+    historyApiFallback: true,
+  },
 };

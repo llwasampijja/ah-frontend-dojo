@@ -19,6 +19,7 @@
     "plugins": [
         "react"
     ],
+    "parser": "babel-eslint",
     "rules": {
         "react/prefer-stateless-function": 0,
         "react/jsx-filename-extension": [
@@ -26,7 +27,8 @@
             { 
                 "extensions": [".js", ".jsx"] 
             }
-        ]
+        ],
+        "import/no-unresolved": false
     }
 }
 
