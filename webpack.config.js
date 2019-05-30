@@ -2,6 +2,12 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
+  entry: './src/index.js',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'main.js',
+    publicPath: '/',
+  },
   resolve: {
     alias: {
       assets: path.resolve(__dirname, 'src/assets/'),
@@ -39,7 +45,8 @@ module.exports = {
   plugins: [
     new HtmlWebPackPlugin({
       template: './src/index.html',
-      filename: './index.html',
+      filename: 'index.html',
+      inject: 'body',
     }),
   ],
   devServer: {

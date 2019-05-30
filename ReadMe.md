@@ -9,6 +9,8 @@ Create a community of like minded authors to foster inspiration and innovation
 by leveraging the modern web.
 
 ---
+## Link to the app
+Click [here](https://ah-frontend-dojo.herokuapp.com/) to go to the app.
 
 ## How to setup project
 * Fork project at [here](https://github.com/andela/ah-frontend-dojo)

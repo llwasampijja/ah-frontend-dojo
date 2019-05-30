@@ -5,10 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "webpack-dev-server --open --hot --mode development",
+    "dev": "webpack-dev-server --open --hot --mode development",
+    "start": "node server.js",
     "build": "webpack --mode production",
     "lint": "eslint",
-    "stylelint": "stylelint '**/*.scss'; exit 0"
+    "stylelint": "stylelint '**/*.scss'; exit 0",
+    "heroku-postbuild": "npm run build"
+  },
+  "engines": {
+    "npm": "6.4.1",
+    "node": "10.15.3"
   },
   "repository": {
     "type": "git",
@@ -25,13 +31,15 @@
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.13.2",
     "jest-css-modules-transform": "^2.2.0",
+    "express": "^4.17.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^7.0.3",
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.8",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "serve": "^11.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
