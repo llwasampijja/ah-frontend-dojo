@@ -1,12 +1,10 @@
 // third party libraries
 import { combineReducers } from 'redux';
-
-// reducers
-import authReducer from './reducers/authReducer';
+import registerReducer from 'store/reducers/registerReducer';
 import articles from './reducers/articles';
 
 const rootReducers = combineReducers({
-  authReducer,
+  registerReducer,
   articles,
 });
 

@@ -1,0 +1,90 @@
+// signup form styles
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.signupForm {
+  width: 100%;
+  background: #FFFFFF;
+  text-align: center;
+
+  &__input {
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid #000000;
+    padding: 20px;
+    font-size: 1.2rem;
+
+    &:focus {
+      outline: transparent;
+      background-color: #FFFFFF;
+    }
+
+    &__error {
+      color: #F34579;
+      margin: auto;
+      font-size: 1.0rem;
+    }
+  }
+
+  &__button {
+    width: 40%;
+    padding: 0.5rem 2rem;
+    margin: 10px auto;
+    border: 1px solid #112387;
+    border-radius: 25px;
+    display: block;
+    font-size: 1.2rem;
+
+    &:hover {
+      outline: transparent;
+      background-color: #2D6686;
+      color: #FFFFFF;
+    }
+  }
+
+  &__signUpMessage {
+    color: rgb(2, 109, 29);
+    margin: auto;
+    font-size: 0.8rem;
+  }
+
+  &__loader {
+    border: 16px solid #F3F3F3;
+    border-radius: 50%;
+    margin: auto;
+    margin-top: 0.5rem;
+    border-top: 16px solid #F34579;
+    border-right: 16px solid #2D6686;
+    border-bottom: 16px solid #F34579;
+    border-left: 16px solid #2D6686;
+    width: 45px;
+    height: 45px;
+    -webkit-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+
+  100% { transform: rotate(360deg); }
+}
+
+.signupForm__button__social {
+  // width: 5rem;
+  // height: 6rem;
+  margin: auto;
+  background-color: #DD4B39;
+}
+
+.prompt_validate_email {
+  display: none;
+}

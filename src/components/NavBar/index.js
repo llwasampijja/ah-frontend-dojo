@@ -2,15 +2,45 @@
 import React, { Component } from 'react';
 
 // third party libraries
-import { Link } from 'react-router-dom';
-
+import { Link, Route } from 'react-router-dom';
 // styles
 import './NavBarStyle.scss';
+// import { SignupUser } from '../../pages/SignupUser';
+import SignupUserPage from 'components/SignupUser';
+import { closeOpenModalFunction } from 'constants/staticsMethods';
 
 class Navbar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      openmodal: false,
+    };
+    this.openModalHandler = this.openModalHandler.bind(this);
+  }
+
+  openModalHandler = () => {
+    this.setState({ openmodal: true });
+    const openModalLink = document.getElementById('span-signup-link');
+    openModalLink.addEventListener('click', closeOpenModalFunction);
+  }
+
   render() {
+    const { openmodal } = this.state;
     return (
       <div className="navbar">
+        {
+          openmodal && (
+            <Route
+              render={
+                props => (
+                  <SignupUserPage
+                    {...props}
+                  />
+                )
+              }
+            />
+          )
+        }
         <div className="navbar__branding">
           <div className="navbar__branding__name">
             <h1>
@@ -35,9 +65,9 @@ class Navbar extends Component {
                 </Link>
               </li>
               <li className="navbar__navigation__auth__button">
-                <Link className="navbar__navigation__auth__button--link" to="/register">
+                <span id="span-signup-link" href="/" className="navbar__navigation__auth__button--link" style={{ cursor: 'pointer' }} onClick={this.openModalHandler} role="button" tabIndex="0" onKeyPress={this.handleKeyPress}>
                   Sign Up
-                </Link>
+                </span>
               </li>
             </ul>
           </div>
