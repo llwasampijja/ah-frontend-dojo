@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ModalBox Component matches the snapshot 1`] = `<Component />`;
+
+exports[`Wrapped Components renders component 1`] = `
+<div>
+  <div
+    className="backdrop"
+  />
+  <div
+    className="modal"
+    id="modal"
+  >
+    <header
+      className="modal__header"
+    >
+      <h4
+        className="modal__header__title"
+      >
+        test
+      </h4>
+      <button
+        className="modal__header__btn"
+        type="button"
+      >
+        X
+      </button>
+    </header>
+    <section
+      className="modal__section"
+    >
+      <testWrappedComponent />
+    </section>
+  </div>
+</div>
+`;

@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+// ModalBox backdrop styles
+.backdrop {
+  position: fixed;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+// ModalBox styles
+.modal {
+  width: 40rem;
+  box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.26);
+  position: fixed;
+  top: 20vh;
+  left: 5rem;
+  
+  // Modal header styles
+  &__header {
+    padding: 1rem;
+    background: #112387;
+    text-align: center;
+
+    // modal header title styles
+    &__title {
+      color: #ffffff;
+      display: inline-block;
+    }
+
+    // modal header close button styles
+    &__btn {
+      color: #ff0000;
+      float: right;
+      padding: 0.3rem;
+    }
+  }
+}

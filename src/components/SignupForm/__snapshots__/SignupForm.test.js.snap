@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignupForm Component matches the snapshot 1`] = `
+<div
+  className="signupForm"
+>
+  <form>
+    <InputBox
+      handleChange={[Function]}
+      inputClass="signupForm__input"
+      inputType="email"
+      name="email"
+      placeholder="email"
+      required={true}
+      value=""
+    >
+      <span
+        className="signupForm__input__error"
+        id="signupForm__input__error__email"
+      >
+        <small>
+          And erro occured
+        </small>
+      </span>
+    </InputBox>
+    <InputBox
+      handleChange={[Function]}
+      inputClass="signupForm__input"
+      inputType="text"
+      name="username"
+      placeholder="username"
+      required={true}
+      value=""
+    >
+      <span
+        className="signupForm__input__error"
+        id="signupForm__input__error__username"
+      >
+        <small>
+          And erro occured
+        </small>
+      </span>
+    </InputBox>
+    <InputBox
+      handleChange={[Function]}
+      inputClass="signupForm__input"
+      inputType="password"
+      name="password"
+      placeholder="password"
+      required={true}
+      value=""
+    >
+      <span
+        className="signupForm__input__error"
+        id="signupForm__input__error__password"
+      >
+        <small>
+          And erro occured
+        </small>
+      </span>
+    </InputBox>
+    <InputBox
+      handleChange={[Function]}
+      inputClass="signupForm__input"
+      inputType="password"
+      name="confirmPassword"
+      placeholder="confirm password"
+      required={true}
+      value=""
+    >
+      <span
+        className="signupForm__input__error"
+        id="signupForm__input__error__confirmPassword"
+      >
+        <small>
+          And erro occured
+        </small>
+      </span>
+    </InputBox>
+    <Button
+      btnClass="signupForm__button"
+      btnEvent={[Function]}
+      btnName="Signup"
+    />
+  </form>
+</div>
+`;
+
+exports[`SignupUser Component matches the snapshot 1`] = `
+<div>
+  <SignupForm
+    confirmPassword=""
+    email=""
+    onChangeHandler={[Function]}
+    onSubmitHandler={[Function]}
+    password=""
+    username=""
+  />
+</div>
+`;
