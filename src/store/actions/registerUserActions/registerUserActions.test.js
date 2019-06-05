@@ -3,7 +3,7 @@ import {
   SIGNUP_SUCCESS,
   SIGNUP_ERROR,
   IS_SIGNING_UP,
-} from 'store/actions/types';
+} from 'store/actions/registerTypes';
 import data from 'store/actions/__mocks__';
 import configureMockStore from 'redux-mock-store';
 import moxios from 'moxios';

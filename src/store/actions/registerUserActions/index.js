@@ -6,10 +6,10 @@ import {
   SIGNUP_SUCCESS,
   SIGNUP_ERROR,
   IS_SIGNING_UP,
-} from 'store/actions/types';
+} from 'store/actions/registerTypes';
 
 /**
- * This is a function.
+ * This is a function which return the IS_SIGNING_UP action
  * @param {none} - mixed parameter types*
  * @return {dictionary}
  * @example
@@ -20,7 +20,7 @@ const signUpRequest = () => ({
 });
 
 /**
- * This is a function.
+ * This is a function which returns the signUPSuccess action
  * @param {dictionary} - A dictionary parameter type*
  * @return {dictionary}
  * @example
@@ -32,7 +32,7 @@ const signUpSuccess = resp => ({
 });
 
 /**
- * This is a function.
+ * This is a function which returns the signUpFailure action
  * @param {dictionary} - A dictionary parameter type
  * @return {dictionary}
  * @example
@@ -44,7 +44,7 @@ const signUpFailure = error => ({
 });
 
 /**
- * This is a function.
+ * This is a function which sends user registration data to the api
  * @param {(string)/3} - multiple strings
  * @return {dictionary}
  * @example

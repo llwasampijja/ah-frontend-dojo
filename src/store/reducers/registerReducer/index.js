@@ -1,5 +1,5 @@
 // action types
-import { SIGNUP_SUCCESS, SIGNUP_ERROR, IS_SIGNING_UP } from 'store/actions/types';
+import { SIGNUP_SUCCESS, SIGNUP_ERROR, IS_SIGNING_UP } from 'store/actions/registerTypes';
 
 /**
   * This is a function.

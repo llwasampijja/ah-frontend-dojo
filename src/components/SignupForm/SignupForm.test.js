@@ -8,8 +8,7 @@ import { shallow } from 'enzyme';
 import SignupForm from 'components/SignupForm';
 
 /**
- * This is a function.
- * test SignupForm component
+ * This is a function which tests SignupForm component
  */
 describe('SignupForm Component', () => {
   it('matches the snapshot', () => {

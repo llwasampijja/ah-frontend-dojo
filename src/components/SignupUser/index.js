@@ -42,7 +42,7 @@ export class SignupUser extends Component {
 
 
   /**
-   * This is a function.
+   * This is a function where the conponent state is initialized
    * @@type {*} n
    *
    */
@@ -54,14 +54,11 @@ export class SignupUser extends Component {
       password: '',
       confirmPassword: '',
     };
-
-    this.onChangeHandler = this.onChangeHandler.bind(this);
-    this.onSubmitHandler = this.onSubmitHandler.bind(this);
   }
 
   /**
-   * This is a function.
-   *
+   * This is a function which handles onclick events for the
+   * button on the signup form
    * @param {event} - An event param*
    * @example
    * on-submission handler for the form
@@ -78,8 +75,8 @@ export class SignupUser extends Component {
   }
 
   /**
-   * This is a function.
-   *
+   * This is a function which handles onchange events for
+   * the input fields for the signup form
    * @param {event} - An event param*
    * @example
    * onchange handler for the form fields
@@ -94,8 +91,7 @@ export class SignupUser extends Component {
   };
 
   /**
-  * This is a function.
-  *
+  * This is a function which returns error messages
   * @param {dictionary} - An dictionary param*
   * @return {string}
   * @example
@@ -111,8 +107,7 @@ export class SignupUser extends Component {
   };
 
   /**
-  * This is a function.
-  *
+  * This is a function which sets the success message on signup
   * @param {string} - A string param*
   * @return {string}
   * @example
@@ -128,8 +123,8 @@ export class SignupUser extends Component {
   };
 
   /**
-  * This is a function.
-  *
+  * This is a function which checks for password and
+  * confirm password similarity
   * @param {(string\|2)} - strings params*
   * @return {string}
   * @example
@@ -145,8 +140,7 @@ export class SignupUser extends Component {
   };
 
   /**
-   * This is a function.
-   *
+   * This is a function which renders the SignupUser component
    * @param {none} - An event param*
    * @return {component}
    * @example
@@ -183,8 +177,7 @@ export class SignupUser extends Component {
 }
 
 /**
-* This is a function.
-*
+* This is a function which maps the props to state
 * @param {dictionary} - A dictionary of state param*
 * @return {dictionary}
 * @example
@@ -200,8 +193,7 @@ const mapStateToProps = (state) => {
 };
 
 /**
-* This is a function.
-*
+* This is a function shich dispatches signup function to props
 * @param {function} - An in-built function param*
 * @return {function}
 * @example

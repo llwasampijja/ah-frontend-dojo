@@ -17,8 +17,7 @@ import { SIGN_UP_STRING } from 'constants/constantStrings';
 
 /**
 /**
- * This is a function.
- *
+ * This is a function which return the SignupForm component
  * @param {*} n - mixed parameter types*
  * @return {component}
  * @example

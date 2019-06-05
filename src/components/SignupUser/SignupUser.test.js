@@ -21,8 +21,7 @@ const props = {
 };
 
 /**
- * This is a function.
- * test SignupUser component
+ * This is a function which tests SignupUser component
  */
 describe('SignupUser Component', () => {
   let wrapper;

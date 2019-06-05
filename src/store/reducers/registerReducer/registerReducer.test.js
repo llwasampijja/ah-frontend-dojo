@@ -6,11 +6,11 @@ import {
   SIGNUP_SUCCESS,
   SIGNUP_ERROR,
   IS_SIGNING_UP,
-} from 'store/actions/types';
+} from 'store/actions/registerTypes';
 
 /**
- * This is a function.
- * test registerUser reducer
+ * This is a function for testing the
+ * registerUser reducer
  */
 describe('registerUser state', () => {
   it('it should return the initial state', () => {
