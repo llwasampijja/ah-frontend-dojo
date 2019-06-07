@@ -1,0 +1,26 @@
+$primary-ultra-light: #D9E3F0;
+$primary: #2D6686;
+
+.footer {
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  font-size: 18px;
+  color: $primary;
+  background-color: $primary-ultra-light;
+
+  &__inner {
+    &__developer {
+      &--name {
+        color: $primary;
+      }
+    }
+
+    &__copyright {
+      &--website {
+        text-decoration: none;
+      }
+
+    }
+  }
+}

@@ -28,7 +28,8 @@
                 "extensions": [".js", ".jsx"] 
             }
         ],
-        "import/no-unresolved": false
+        "import/no-unresolved": false,
+        "camelcase" : 0
     }
 }
 

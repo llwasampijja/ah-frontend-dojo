@@ -4,9 +4,9 @@ exports[`App Component matches the snapshot 1`] = `
 <BrowserRouter>
   <Switch>
     <Route
-      component={[Function]}
       exact={true}
       path="/"
+      render={[Function]}
     />
     <Route
       component={[Function]}

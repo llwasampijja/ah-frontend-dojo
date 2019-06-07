@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css?family=Lobster&display=swap");
+@import "sass-rem";
+
+$primary: #2D6686;
+$primary-ultra-light: #D9E3F0;
+$secondary: #F34579;
+$white: #FFFFFF;
+
+.navbar {
+  padding-top: 0.5rem;
+  min-height: 7rem;
+  width: 100%;
+  font-family: "Open Sans", sans-serif;
+  box-shadow: 0.1rem 0.1rem 0.3rem $primary;
+
+  &__branding {
+    float: left;
+    margin-left: 3rem;
+    width: 30%;
+    font-family: "Lobster", sans-serif;
+    color: $secondary;
+
+    &__name {
+      margin-left: 1.2rem;
+    }
+
+    &__moto {
+      width: 15rem;
+      padding: 0.3rem;
+      text-align: center;
+      border-radius: 0.3rem;
+      background-color: $primary-ultra-light;
+      font-family: "Open Sans", sans-serif;
+      font-size: 0.8rem;
+    }
+  }
+
+  &__navigation {
+    float: right;
+    margin-right: 4rem;
+
+    &__auth {
+      margin-top: -1.5rem;
+      margin-right: rem(-20px);
+      padding: rem(15px);
+      width: rem(135px);
+      background-color: $primary-ultra-light;
+      border-radius: rem(20px);
+      font-size: rem(13px);
+
+      &__button {
+        display: inline;
+        padding: 0.3rem;
+
+        &--link {
+          text-decoration: none;
+        }
+      }
+    }
+
+    &__articles {
+      margin-top: 2rem;
+      
+      &__ul {
+        text-decoration: none;
+
+        &__li {
+          display: inline;
+
+          &--button {
+            display: inline;
+            margin-left: 1rem;
+            padding: 0.5rem 2rem;
+            border: rem(1px) solid $primary;
+            border-radius: rem(50px);
+            text-decoration: none;
+            color: $primary;
+          }
+        }
+      }
+    }
+  }
+}
+
+// .navbar a {
+//   text-decoration: none;
+// }
+
+// .navbar ul {
+//   margin-top: 0.9rem;
+//   padding: 0;
+// }
+
+// .navbar ul li {
+//   margin: 0.2rem;
+//   display: inline;
+// }
+
+// .navbar ul li a {
+//   padding: 0.4rem 1.5rem;
+//   border: 0.05rem solid $primary;
+//   border-radius: 3rem;
+//   color: $primary;
+// }
+
+// .navbar ul li a:hover {
+//   background-color: $primary;
+//   color: $white;
+// }
+
+// .navbar .branding h1 {
+//   margin: 0;
+// }

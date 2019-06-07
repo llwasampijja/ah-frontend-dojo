@@ -13,6 +13,8 @@ module.exports = {
       assets: path.resolve(__dirname, 'src/assets/'),
       components: path.resolve(__dirname, 'src/components/'),
       pages: path.resolve(__dirname, 'src/pages/'),
+      store: path.resolve(__dirname, 'src/store/'),
+      utils: path.resolve(__dirname, 'src/utils/'),
     },
   },
   module: {
@@ -39,6 +41,10 @@ module.exports = {
           'css-loader', // translates CSS into CommonJS
           'sass-loader', // compiles Sass to CSS, using Node Sass by default
         ],
+      },
+      {
+        test: /\.(jpg)(\?[a-z0-9=.]+)?$/,
+        loader: 'url-loader?limit=100000',
       },
     ],
   },
