@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignupUser Component matches the snapshot 1`] = `
+<div>
+  <SignupForm
+    confirmPassword=""
+    confirmPasswordError=""
+    email=""
+    emailError=""
+    isSigningUp={true}
+    onChangeHandler={[Function]}
+    onSubmitHandler={[Function]}
+    password=""
+    passwordError=""
+    signupMessageState=""
+    username=""
+    usernameError=""
+  />
+</div>
+`;

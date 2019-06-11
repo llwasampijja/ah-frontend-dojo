@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignupForm Component matches the snapshot 1`] = `
+<ModalBox
+  confirmPassword=""
+  confirmPasswordError=""
+  email=""
+  emailError=""
+  isSigningUp={false}
+  onChangeHandler={[Function]}
+  onSubmitHandler={[Function]}
+  password=""
+  passwordError=""
+  show={true}
+  signupMessageState=""
+  title="Sign up"
+  username=""
+  usernameError=""
+>
+  <div>
+    <form
+      className="signupForm"
+      id="signupForm"
+    >
+      <InputBox
+        handleChange={[Function]}
+        inputClass="signupForm__input"
+        inputType="email"
+        name="email"
+        placeholder="email"
+        required={true}
+        value=""
+      >
+        <br />
+        <span
+          className="signupForm__input__error"
+          id="signupForm__input__error__email"
+        >
+          <small />
+        </span>
+      </InputBox>
+      <InputBox
+        handleChange={[Function]}
+        inputClass="signupForm__input"
+        inputType="text"
+        name="username"
+        placeholder="username"
+        required={true}
+        value=""
+      >
+        <br />
+        <span
+          className="signupForm__input__error"
+          id="signupForm__input__error__username"
+        >
+          <small />
+        </span>
+      </InputBox>
+      <InputBox
+        handleChange={[Function]}
+        inputClass="signupForm__input"
+        inputType="password"
+        name="password"
+        placeholder="password"
+        required={true}
+        value=""
+      >
+        <br />
+        <span
+          className="signupForm__input__error"
+          id="signupForm__input__error__password"
+        >
+          <small />
+        </span>
+      </InputBox>
+      <InputBox
+        handleChange={[Function]}
+        inputClass="signupForm__input"
+        inputType="password"
+        name="confirmPassword"
+        placeholder="confirm password"
+        required={true}
+        value=""
+      >
+        <br />
+        <span
+          className="signupForm__input__error"
+          id="signupForm__input__error__confirmPassword"
+        >
+          <small />
+        </span>
+      </InputBox>
+      <br />
+      <span
+        className="signupForm__signUpMessage"
+      />
+      <Button
+        btnClass="signupForm__button"
+        btnEvent={[Function]}
+        btnName="Sign up"
+        id="signupForm__button"
+      />
+    </form>
+  </div>
+</ModalBox>
+`;
