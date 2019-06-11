@@ -1,85 +1,80 @@
+
+// react libraries
 import React from 'react';
-import { shallow } from 'enzyme';
+
+// third-party libraries
+import { mockArticle, shouldContainClass, shouldContainText } from 'utils';
+
+// components
 import ArticlePreview from './index';
 
 
-const setUpArticlePreview = () => {
-  const article = {
-    id: 2,
-    slug: 'this-is-the-second-article-67gl',
-    title: 'This is the second article',
-    body: 'An article second',
-    description: 'two os fonle',
-    author: 'andela',
-    publish_status: false,
-    createdAt: '2019-05-17T12:56:29.444403Z',
-    updatedAt: '2019-05-17T12:56:29.444469Z',
-    delete_status: false,
-    tagList: [
-      'one',
-      'two',
-    ],
-    time_to_read: 1,
-    read_stats: {
-      views: 0,
-      reads: 0,
-    },
-    likeCount: [
-      {
-        likes: 0,
-        dislikes: 0,
-      },
-    ],
-  };
-
-  const component = shallow(
-    <ArticlePreview
-      article={article}
-    />,
-  );
-  return component;
-};
+const article = (title, description) => mockArticle(title, description);
 
 describe('Article Preview Component', () => {
   it('Should contain an article class', () => {
-    const component = setUpArticlePreview();
-    const wrapper = component.find('.article-preview');
-    expect(wrapper.length).toBe(1);
+    shouldContainClass(<ArticlePreview
+      article={article()}
+    />, '.article-preview');
   });
 
   it('Should render an article__image class', () => {
-    const component = setUpArticlePreview();
-    const wrapper = component.find('.article-preview__image');
-    expect(wrapper.length).toBe(1);
+    shouldContainClass(<ArticlePreview
+      article={article()}
+    />, '.article-preview__image');
   });
 
   it('Should render an article__title class', () => {
-    const component = setUpArticlePreview();
-    const wrapper = component.find('.article-preview__title');
-    expect(wrapper.length).toBe(1);
+    shouldContainClass(<ArticlePreview
+      article={article()}
+    />, '.article-preview__title');
   });
 
   it('Should render an article__sample class', () => {
-    const component = setUpArticlePreview();
-    const wrapper = component.find('.article-preview__sample');
-    expect(wrapper.length).toBe(1);
+    shouldContainClass(<ArticlePreview
+      article={article()}
+    />, '.article-preview__sample');
   });
 
   it('Should render an article__footer class', () => {
-    const component = setUpArticlePreview();
-    const wrapper = component.find('.article-preview__footer');
-    expect(wrapper.length).toBe(1);
+    shouldContainClass(<ArticlePreview
+      article={article()}
+    />, '.article-preview__footer');
   });
 
   it('Should render an article__author class', () => {
-    const component = setUpArticlePreview();
-    const wrapper = component.find('.article-preview__footer__author');
-    expect(wrapper.length).toBe(1);
+    shouldContainClass(<ArticlePreview
+      article={article()}
+    />, '.article-preview__footer__author');
   });
 
   it('Should render an article__date class', () => {
-    const component = setUpArticlePreview();
-    const wrapper = component.find('.article-preview__footer__date');
-    expect(wrapper.length).toBe(1);
+    shouldContainClass(<ArticlePreview
+      article={article()}
+    />, '.article-preview__footer__date');
+  });
+
+  it('Should render a title without the trailing 3 dots', () => {
+    shouldContainText(<ArticlePreview
+      article={article('short title')}
+    />, '.article-preview__title', 'short title');
+  });
+
+  it('Should render a title with the trailing 3 dots', () => {
+    shouldContainText(<ArticlePreview
+      article={article('12345678901234567890123456789012345678901')}
+    />, '.article-preview__title', '1234567890123456789012345678901234567...');
+  });
+
+  it('Should render a description without the trailing 3 dots', () => {
+    shouldContainText(<ArticlePreview
+      article={article('short title', 'short description')}
+    />, '.article-preview__sample', 'short description');
+  });
+
+  it('Should render a title with the trailing 3 dots', () => {
+    shouldContainText(<ArticlePreview
+      article={article('short title', '12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901')}
+    />, '.article-preview__sample', '1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567...');
   });
 });

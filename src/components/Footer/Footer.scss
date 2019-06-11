@@ -1,13 +1,15 @@
-$primary-ultra-light: #D9E3F0;
-$primary: #2D6686;
+@import "assets/MainStyle.scss";
 
 .footer {
-  width: 100%;
+  margin: auto;
+  background-color: $primary-ultra-light;
+  width: 99%;
   padding: 1rem;
+  border-top-left-radius: rem(10px);
+  border-top-right-radius: rem(10px);
   text-align: center;
   font-size: 18px;
   color: $primary;
-  background-color: $primary-ultra-light;
 
   &__inner {
     &__developer {
@@ -19,8 +21,8 @@ $primary: #2D6686;
     &__copyright {
       &--website {
         text-decoration: none;
+        color: $primary;
       }
-
     }
   }
 }

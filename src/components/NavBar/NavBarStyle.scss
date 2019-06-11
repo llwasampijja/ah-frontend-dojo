@@ -1,66 +1,74 @@
-@import url("https://fonts.googleapis.com/css?family=Lobster&display=swap");
-@import "sass-rem";
-
-$primary: #2D6686;
-$primary-ultra-light: #D9E3F0;
-$secondary: #F34579;
-$white: #FFFFFF;
+@import 'assets/MainStyle.scss';
 
 .navbar {
   padding-top: 0.5rem;
-  min-height: 7rem;
+  min-height: 6rem;
   width: 100%;
-  font-family: "Open Sans", sans-serif;
+  font-family: $primary-font-family;
   box-shadow: 0.1rem 0.1rem 0.3rem $primary;
 
   &__branding {
     float: left;
     margin-left: 3rem;
     width: 30%;
-    font-family: "Lobster", sans-serif;
+    font-family: $secondary-font-family;
     color: $secondary;
 
     &__name {
+      width: rem(200px);
       margin-left: 1.2rem;
     }
 
     &__moto {
       width: 15rem;
-      padding: 0.3rem;
-      text-align: center;
-      border-radius: 0.3rem;
       background-color: $primary-ultra-light;
-      font-family: "Open Sans", sans-serif;
+      padding: 0.3rem;
+      border-radius: 0.3rem;
+      font-family: $primary-font-family;
+      text-align: center;
       font-size: 0.8rem;
     }
   }
 
   &__navigation {
     float: right;
-    margin-right: 4rem;
 
     &__auth {
-      margin-top: -1.5rem;
-      margin-right: rem(-20px);
-      padding: rem(15px);
-      width: rem(135px);
+      float: right;
+      margin-right: 1rem;
+      margin-top: rem(-10px);
       background-color: $primary-ultra-light;
-      border-radius: rem(20px);
-      font-size: rem(13px);
+      width: rem(115px);
+      padding: rem(10px);
+      box-shadow: rem(0px) rem(1px) rem(3px) $primary;
+      border-bottom-right-radius: rem(20px);
+      border-bottom-left-radius: rem(20px);
+      font-size: 0.8125rem;
 
       &__button {
         display: inline;
         padding: 0.3rem;
 
         &--link {
+          padding-top: rem(10px);
           text-decoration: none;
+          color: $primary;
+        }
+
+        &:nth-child(1) {
+          border-right: rem(1px) solid $primary;
+        }
+
+        &--link:hover {
+          color: $secondary;
         }
       }
     }
 
     &__articles {
-      margin-top: 2rem;
-      
+      display: flex;
+      margin-top: 2.5rem;
+
       &__ul {
         text-decoration: none;
 
@@ -76,38 +84,29 @@ $white: #FFFFFF;
             text-decoration: none;
             color: $primary;
           }
+
+          &--button:hover {
+            background-color: $primary;
+            color: $white;
+          } 
         }
       }
     }
   }
 }
 
-// .navbar a {
-//   text-decoration: none;
-// }
+@media screen and (max-width: rem(800px)) {
+  .navbar__branding {
+    margin-left: 1rem;
+  }
 
-// .navbar ul {
-//   margin-top: 0.9rem;
-//   padding: 0;
-// }
+  .navbar__navigation__articles {
+    width: rem(150px);
+  }
+}
 
-// .navbar ul li {
-//   margin: 0.2rem;
-//   display: inline;
-// }
-
-// .navbar ul li a {
-//   padding: 0.4rem 1.5rem;
-//   border: 0.05rem solid $primary;
-//   border-radius: 3rem;
-//   color: $primary;
-// }
-
-// .navbar ul li a:hover {
-//   background-color: $primary;
-//   color: $white;
-// }
-
-// .navbar .branding h1 {
-//   margin: 0;
-// }
+@media screen and (max-width: rem(700px)) {
+  .navbar__branding__moto {
+    display: none;
+  }
+}

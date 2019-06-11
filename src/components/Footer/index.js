@@ -1,6 +1,12 @@
+// react
 import React from 'react';
+
+// style
 import './Footer.scss';
 
+/**
+ * Footer function.
+ */
 const Footer = () => (
   <div className="footer">
     <div className="footer__inner">

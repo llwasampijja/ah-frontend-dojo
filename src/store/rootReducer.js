@@ -1,4 +1,7 @@
+// third party libraries
 import { combineReducers } from 'redux';
+
+// reducers
 import authReducer from './reducers/authReducer';
 import articles from './reducers/articles';
 

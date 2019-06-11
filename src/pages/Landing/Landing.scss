@@ -1,9 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:600&display=swap");
-$primary: #2D6686;
-$primary-ultra-light: #DAE8F2;
-$secondary: #E91E63;
-$shadow: #D3D6DB;
-$white: #FFFFFF;
+@import 'assets/MainStyle.scss';
 
 .banner-image {
   margin-top: 3px;
@@ -51,75 +46,26 @@ $white: #FFFFFF;
   width: 90%;
 
   &__col {
-    margin-left: 2rem;
     float: left;
+    margin-left: 2rem;
     width: 30%;
 
     &__header {
       height: 2.5rem;
+      background-color: $secondary;
       text-align: center;
-      border-top: 0.3rem solid $primary;
+      color: $white;
+      box-shadow: rem(0px) rem(2px) rem(3px) $primary;
 
       &__title {
         padding-top: 0.3rem;
         font-size: 1.5rem;
-        color: $secondary;
       }
     }
   }
 }
 
-.article-preview {
-  margin: auto;
-  margin-top: 0.5rem;
-  margin-bottom: 1rem;
-  width: 90%;
-  box-shadow: 0.1rem 0.1rem 0.7rem $shadow;
-
-  &__title {
-    padding: 0.5rem;
-    font-family: "Open Sans", sans-serif;
-    color: $primary;
-  }
-
-  &__sample {
-    padding: 0.5rem;
-    height: 3rem;
-    overflow: hidden;
-  }
-
-  &__image {
-    width: 100%;
-    padding: 0.8rem;
-    height: 7rem;
-    overflow: hidden;
-    background-size: cover;
-    background-position: center;
-    background-image: url("../../assets/images/perfecto-capucine-779224-unsplash.jpg");
-  }
-
-  &__read-time {
-    padding: 0.5rem;
-  }
-
-  &__footer {
-    height: 3rem;
-    padding: 0.8rem;
-    background-color: $primary;
-    color: $white;
-
-    &__author {
-      float: left;
-      width: 40%;
-    }
-
-    &__date {
-      float: right;
-    }
-  }
-}
-
-@media screen and (max-width: 600px) {
+@media screen and (max-width: rem(600px)) {
   .article-grid {
     width: 100%;
 
@@ -135,7 +81,7 @@ $white: #FFFFFF;
   }
 }
 
-@media screen and (max-width: 1066px) {
+@media screen and (max-width: rem(1066px)) {
   .article-grid__col {
     margin-left: 0rem;
   }

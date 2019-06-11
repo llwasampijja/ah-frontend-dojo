@@ -1,4 +1,4 @@
-import { formatDate } from './index';
+import { formatDate } from '.';
 
 describe('Format date before october', () => {
   it('Should format the date to a readable format', () => {

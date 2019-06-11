@@ -4,7 +4,11 @@ import React from 'react';
 // third-party libraries
 import PropTypes from 'prop-types';
 
-import { formatDate } from '../../utils';
+// styles
+import './ArticlePreview.scss';
+
+// components
+import { formatDate } from 'utils';
 
 const ArticlePreview = (props) => {
   const { article } = props;
@@ -16,9 +20,9 @@ const ArticlePreview = (props) => {
     time_to_read,
   } = article;
 
+  // maximum text lengths
   const descriptionLength = 100;
   const titleLength = 40;
-
 
   return (
     <div className="article-preview">
@@ -27,6 +31,7 @@ const ArticlePreview = (props) => {
       </div>
       <div className="article-preview__title">
         <p>
+          {/* cut title lentgh */}
           {title.length > titleLength ? `${title.substring(0, titleLength - 3)}...`
             : title
           }
@@ -34,6 +39,7 @@ const ArticlePreview = (props) => {
       </div>
       <div className="article-preview__sample">
         <p>
+          {/* cut description length */}
           {description.length > descriptionLength ? `${description.substring(0, descriptionLength - 3)}...`
             : description
           }
@@ -44,10 +50,10 @@ const ArticlePreview = (props) => {
       </div>
       <div className="article-preview__footer">
         <div className="article-preview__footer__author">
-          <p>{author}</p>
+          <p className="article-preview__footer__author--name">{author}</p>
         </div>
         <div className="article-preview__footer__date">
-          <p>{formatDate(updatedAt)}</p>
+          <p className="article-preview__footer__date--updated">{formatDate(updatedAt)}</p>
         </div>
       </div>
     </div>

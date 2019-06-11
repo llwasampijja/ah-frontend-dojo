@@ -1,0 +1,61 @@
+@import 'assets/MainStyle.scss';
+ 
+.article-preview {
+  margin: auto;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  width: 90%;
+  box-shadow: 0.1rem 0.1rem 0.7rem $shadow;
+
+  &__title {
+    padding: 0.5rem;
+    font-family: $primary-font-family;
+    color: $primary;
+  }
+
+  &__sample {
+    padding: 0.5rem;
+    height: 3rem;
+    overflow: hidden;
+  }
+
+  &__image {
+    width: 100%;
+    padding: 0.8rem;
+    height: 7rem;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../../assets/images/perfecto-capucine-779224-unsplash.jpg");
+  }
+
+  &__read-time {
+    padding: 0.5rem;
+  }
+
+  &__footer {
+    height: 3rem;
+    padding: 0.8rem;
+
+    &__author {
+      float: left;
+      width: 40%;
+      font-weight: bold;
+      color: $secondary;
+
+      &--name::before {
+        content: 'By: ';
+      }
+    }
+
+    &__date {
+      float: right;
+      color: $primary;
+
+      &--updated::before {
+        font-weight: bold;
+        content: 'Dated: ';
+      }
+    }
+  }
+}

@@ -8,3 +8,6 @@ yarn.lock
 
 # distribution directories
 dist/
+
+# Mac Files
+.DS_Store

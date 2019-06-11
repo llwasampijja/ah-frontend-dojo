@@ -1,29 +1,43 @@
+// react imports
 import React from 'react';
+
+// third party libraries
 import { shallow } from 'enzyme';
-import { LandingPage } from './index';
 
-
-const setUpLandingPage = () => {
-  const component = shallow(<LandingPage />);
-  return component;
-};
+// component imports
+import { mockArticle, shouldContainClass, shouldContainText } from 'utils';
+import { LandingPage } from '.';
+import ArticleColumn from './ArticleColumn';
 
 describe('Landing Page', () => {
+  it('should render', () => {
+    expect(shallow(<LandingPage />).exists()).toBe(true);
+  });
+
   it('Should render a bannerImage class', () => {
-    const component = setUpLandingPage();
-    const wrapper = component.find('.banner-image');
-    expect(wrapper.length).toBe(1);
+    shouldContainClass(<LandingPage />, '.banner-image');
   });
 
   it('Should render a welcomePitch class', () => {
-    const component = setUpLandingPage();
-    const wrapper = component.find('.welcome-pitch');
-    expect(wrapper.length).toBe(1);
+    shouldContainClass(<LandingPage />, '.welcome-pitch');
   });
 
   it('Should contain an article-grid class', () => {
-    const component = setUpLandingPage();
-    const wrapper = component.find('.article-grid');
-    expect(wrapper.length).toBe(1);
+    shouldContainClass(<LandingPage />, '.article-grid');
+  });
+});
+
+describe('Article Column', () => {
+  it('Should contain an article-grid__col class', () => {
+    shouldContainClass(<ArticleColumn columnTitle="Most Recent" />, '.article-grid__col');
+  });
+
+  it('Should contain an article-grid__col__header__title class', () => {
+    shouldContainText(<ArticleColumn columnTitle="Most Recent" />, '.article-grid__col__header__title', 'Most Recent');
+  });
+
+  it('Should receive an article', () => {
+    const component = shallow(<ArticleColumn columnTitle="Most Recent" articles={[mockArticle()]} />);
+    expect(component.exists()).toBe(true);
   });
 });

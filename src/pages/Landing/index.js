@@ -10,24 +10,23 @@ import PropTypes from 'prop-types';
 import './Landing.scss';
 
 // components
-import ArticlePreview from 'components/ArticlePreview';
-import Navbar from 'components/NavBar/NavBar';
+import Navbar from 'components/NavBar';
 import Footer from 'components/Footer';
-
-// thunks (action creators)
+import Loader from 'components/Loader';
 import { getAllArticles } from 'store/actions/articleActions';
+import ArticleColumn from './ArticleColumn';
 
 
 export class LandingPage extends Component {
   componentDidMount() {
     const { getArticles } = this.props;
-    if (getArticles) {
-      getArticles();
-    }
+
+    // fetch articles
+    getArticles();
   }
 
   render() {
-    const { articles } = this.props;
+    const { articles, isFetching } = this.props;
     return (
       // Navbar
       <div>
@@ -57,33 +56,12 @@ export class LandingPage extends Component {
               </p>
             </div>
           </div>
-
+          {isFetching ? <Loader /> : null}
           {/* Article preview grid */}
           <div className="article-grid">
-            <div className="article-grid__col">
-              <div className="article-grid__col__header">
-                <p className="article-grid__col__header__title">Most Popular</p>
-              </div>
-              {
-                articles.map(article => <ArticlePreview key={article.id} article={article} />)
-              }
-            </div>
-            <div className="article-grid__col">
-              <div className="article-grid__col__header">
-                <p className="article-grid__col__header__title">Most Liked</p>
-              </div>
-              {
-                articles.map(article => <ArticlePreview key={article.id} article={article} />)
-              }
-            </div>
-            <div className="article-grid__col">
-              <div className="article-grid__col__header">
-                <p className="article-grid__col__header__title">Most Trending</p>
-              </div>
-              {
-                articles.map(article => <ArticlePreview key={article.id} article={article} />)
-              }
-            </div>
+            <ArticleColumn columnTitle="Most Popular" articles={articles} />
+            <ArticleColumn columnTitle="Most Liked" articles={articles} />
+            <ArticleColumn columnTitle="Most Recent" articles={articles} />
           </div>
           <Footer />
         </div>
@@ -95,6 +73,7 @@ export class LandingPage extends Component {
 // proptype validation
 LandingPage.propTypes = {
   getArticles: PropTypes.func,
+  isFetching: PropTypes.bool,
   articles: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
     slug: PropTypes.string.isRequired,
@@ -123,11 +102,23 @@ LandingPage.propTypes = {
 
 LandingPage.defaultProps = {
   articles: [],
+  isFetching: false,
   getArticles: () => { },
 };
 
+/**
+ * This is a function to pass the state as a prop.
+ * @param {state}  - The state
+ * @return {articles} - An aray of articles
+ *
+ */
 const mapStateToProps = state => state.articles;
-
+/**
+ * This is a function to pass the state as a prop.
+ * @param {dispatch}  - The dispatch function
+ * @return {getArticles} - The thunk to fetch articles
+ *
+ */
 const mapDispatchToProps = dispatch => bindActionCreators({
   getArticles: () => getAllArticles(),
 }, dispatch);

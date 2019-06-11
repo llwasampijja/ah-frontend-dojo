@@ -1,12 +1,18 @@
+@import url("https://fonts.googleapis.com/css?family=Lobster&display=swap");
+@import "sass-rem";
+
+$primary-font-family: "Open Sans", sans-serif;
+$secondary-font-family: "Lobster", sans-serif;
+
+$primary: #2D6686;
+$primary-ultra-light: #D9E3F0;
+$secondary: #E91E63;
+$white: #FFFFFF;
+$shadow: #D3D6DB;
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 
-}
-
-$main--green: #82B340;
-
-.text--green {
-  color: $main--green;
 }
