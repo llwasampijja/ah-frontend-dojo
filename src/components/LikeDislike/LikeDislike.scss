@@ -1,0 +1,51 @@
+// like-dislike styles
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#like-dislike {
+  height: 4rem;
+  width: auto;
+}
+
+img.like-dislike-img {
+  width: 1.5rem;
+  height: 1.5rem;
+  float: left;
+  margin: 0.2rem;
+}
+
+img#dislike-img {
+  width: 1.5rem;
+  height: 1.5rem;
+  transform-origin: center;
+  transform: rotate(180deg);
+  position: relative;
+}
+
+img.dislike-activated, img.like-activated {
+  opacity: 1.0;
+}
+
+img.like-dislike-deactivated {
+  opacity: 0.5;
+}
+
+.like-dislike-wrapper {
+  float: right;
+}
+
+button {
+  background-color: none;
+  cursor: pointer ;
+  background: none;
+  box-sizing: border-box;
+  margin: 0;
+  border-width: 0;
+  float: left;
+}
+
+button:focus {
+  outline: none;
+}

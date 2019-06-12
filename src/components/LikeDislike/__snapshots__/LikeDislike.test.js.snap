@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tests for fucntionality of LikeDislike Component matches the snapshot 1`] = `
+<div
+  id="like-dislike-buttons-wrapper"
+>
+  <div
+    className="like-dislike-wrapper"
+  >
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="like"
+        className="like-dislike-img  like-dislike-deactivated"
+        id="dislike-img"
+        src="src/assets/images/like.png"
+      />
+    </button>
+  </div>
+  <div
+    className="like-dislike-wrapper"
+  >
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt="dislike"
+        className="like-dislike-img  like-dislike-deactivated"
+        id="like-img"
+        src="src/assets/images/like.png"
+      />
+    </button>
+  </div>
+</div>
+`;

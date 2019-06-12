@@ -53,4 +53,33 @@ describe('SignupUser Component', () => {
     instance.setState({ signupError: { errors: { username: 'username error', email: 'email error', password: 'password error' } } });
     expect(instance.props.isSigningUp).toBe(true);
   });
+
+
+  it('activates dislike when disliked an article', () => {
+    wrapper.setProps({
+      signUp: jest.fn(),
+      signupSuccess: 'hshshsh',
+      signupError: undefined,
+      isSigningUp: false,
+      closeModal: jest.fn()
+    });
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('activates dislike when disliked an article', () => {
+    wrapper.setProps({
+      signUp: jest.fn(),
+      signupSuccess: '',
+      signupError: {
+        errors: {
+          username: 'username error',
+          email: 'email error',
+          password: 'password error'
+        },
+      },
+      isSigningUp: false,
+      closeModal: jest.fn()
+    });
+    expect(wrapper).toMatchSnapshot();
+  });
 });

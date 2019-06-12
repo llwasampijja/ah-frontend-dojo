@@ -31,6 +31,8 @@ export class Comment extends Component {
         highlighted_text: PropTypes.string,
         start_index: PropTypes.string,
         end_index: PropTypes.string,
+        likeStatus: PropTypes.bool,
+        dislikeStatus: PropTypes.bool,
       }).isRequired
     ).isRequired,
 
@@ -80,9 +82,9 @@ export class Comment extends Component {
 export const mapStateToProps = (state) => {
   const {
     commentReducer: { comments, commentsCount },
-    loginReducer: { user: { username } }
+    loginReducer: { user: { username } },
   } = state;
-  return { comments, commentsCount, username };
+  return { comments, commentsCount, username, };
 };
 
 // map dispatch to props

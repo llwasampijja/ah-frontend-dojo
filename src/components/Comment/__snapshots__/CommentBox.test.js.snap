@@ -27,6 +27,12 @@ exports[`Comment Box should render without crushing 1`] = `
   >
     my first comment
   </div>
+  <Connect(LikeDislikeComment)
+    articleSlug="my_article_slug"
+    commentId={1}
+    dislikeStatus={false}
+    likeStatus={false}
+  />
   <div
     className="comment_footer"
   >

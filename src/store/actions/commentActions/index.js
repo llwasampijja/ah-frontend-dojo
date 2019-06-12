@@ -57,18 +57,28 @@ export const displayCommentErrorRequest = (errorMessage) => {
  * @returns {object}   returns a list of comments or an empty list if none
  */
 export const readComments = articleSlug => (dispatch) => {
-  const config = {
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    responseType: 'application/json',
-  };
+  let config;
+  if (isAuthenticated().token) {
+    config = {
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer '.concat(isAuthenticated().token)
+      },
+      responseType: 'application/json',
+    };
+  } else {
+    config = {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      responseType: 'application/json',
+    };
+  }
 
   return axios.get(`${baseURL}/articles/${articleSlug}/comments/`, config)
 
     .then((comment) => {
       const commentData = comment.data;
-
       dispatch(getCommentsRequest(commentData.comments, commentData.commentsCount));
     }).catch(error => (dispatch(displayCommentErrorRequest(error.response.data))));
 };

@@ -24,11 +24,15 @@ exports[`Setting Component should match the snapshot 1`] = `
       panes={
         Array [
           Object {
-            "menuItem": "Bookmarks ",
+            "menuItem": "Articles ",
             "render": [Function],
           },
           Object {
-            "menuItem": "| Settings",
+            "menuItem": " | Bookmarks ",
+            "render": [Function],
+          },
+          Object {
+            "menuItem": " | Settings",
             "render": [Function],
           },
         ]

@@ -6,6 +6,7 @@ import confirmEmailReducer from 'store/reducers/confirmEmailReducer';
 import passwordResetReducer from 'store/reducers/passwordResetReducer';
 import bookmarkReducer from 'store/reducers/bookmarkReducer';
 import commentReducer from 'store/reducers/commentReducer';
+import likeDislikeCommentReducer from 'store/reducers/likeDislikeCommentReducer';
 
 import articles from './reducers/articles';
 import facebookReducer from './reducers/socialReducer/Facebook';
@@ -24,6 +25,7 @@ const rootReducers = combineReducers({
   profile,
   bookmarkReducer,
   commentReducer,
+  likeDislikeCommentReducer,
 });
 
 export default rootReducers;

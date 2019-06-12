@@ -54,7 +54,7 @@ describe('actions', () => {
       const request = moxios.requests.mostRecent();
       request.respondWith({
         status: 400,
-        response: data.register.signupSuccess,
+        response: data.register.signupError,
       });
     });
     const expectedActions = [

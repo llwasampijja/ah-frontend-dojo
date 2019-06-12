@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tests the UI functionality of LikeDislikeComment component test if likedislike component renders well 1`] = `
+<LikeDislike
+  dislikeFunction={[Function]}
+  dislikeState={false}
+  likeFunction={[Function]}
+  likeState={false}
+/>
+`;

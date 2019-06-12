@@ -1,5 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`SignupUser Component activates dislike when disliked an article 1`] = `
+<div>
+  <SignupForm
+    backdropId="signupModal"
+    closeModal={[MockFunction]}
+    confirmPassword=""
+    confirmPasswordError=""
+    email=""
+    emailError=""
+    isSigningUp={false}
+    onChangeHandler={[Function]}
+    onSubmitHandler={[Function]}
+    password=""
+    passwordError=""
+    signupMessageState="You have sucessfully been signed. Go to your email to verify your account."
+    username=""
+    usernameError=""
+  />
+</div>
+`;
+
+exports[`SignupUser Component activates dislike when disliked an article 2`] = `
+<div>
+  <SignupForm
+    backdropId="signupModal"
+    closeModal={[MockFunction]}
+    confirmPassword=""
+    confirmPasswordError=""
+    email=""
+    emailError=""
+    isSigningUp={false}
+    onChangeHandler={[Function]}
+    onSubmitHandler={[Function]}
+    password=""
+    passwordError=""
+    signupMessageState=""
+    username=""
+    usernameError=""
+  />
+</div>
+`;
+
 exports[`SignupUser Component matches the snapshot 1`] = `
 <div>
   <SignupForm
