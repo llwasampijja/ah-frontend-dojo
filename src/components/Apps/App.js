@@ -8,6 +8,7 @@ import PrivateRoute from 'routers/PrivateRoute';
 
 
 import 'assets/MainStyle.scss';
+import Comment from 'components/Comment';
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
       <Router>
         <Switch>
           <Route exact path="/" render={props => <LandingPage {...props} />} />
+          <Route path="/comments" render={props => <Comment {...props} articleSlug="javascript-code" />} />
           <Route path="/reset-password" render={props => <PasswordResetPage {...props} />} />
           <PrivateRoute path="/profile/:profileUser" component={ProfilePage} />
           <Route component={PageNotFound} />
