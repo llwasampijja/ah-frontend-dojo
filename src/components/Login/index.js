@@ -2,7 +2,6 @@
 import React, { Component } from 'react';
 
 // third-party libraries
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -12,6 +11,7 @@ import loginUser from 'store/actions/loginActions';
 // Import components
 import InputBox from 'components/InputBox';
 import Button from 'components/Button';
+import EmailConfirmation from 'components/EmailConfirmation';
 
 // Login form css
 import 'components/Login/Login.scss';
@@ -23,11 +23,11 @@ export class Login extends Component {
   constructor(props) {
     super(props);
 
-
     this.state = {
       email: '',
       password: '',
       isSubmitted: false,
+      passwordResetModal: false,
     };
   }
 
@@ -37,7 +37,7 @@ export class Login extends Component {
     this.setState({ [name]: value });
   }
 
-  handleSubmit= (e) => {
+  handleSubmit = (e) => {
     e.preventDefault();
 
     this.setState({ isSubmitted: true });
@@ -50,16 +50,28 @@ export class Login extends Component {
     }
   }
 
+  openModalHandler = () => {
+    this.setState(state => (
+      { passwordResetModal: !state.passwordResetModal }
+    ));
+  };
+
 
   render() {
     const {
       isLoggingIn, error, success, closeModal
     } = this.props;
-    const { email, password, isSubmitted } = this.state;
+    const {
+      email,
+      password,
+      isSubmitted,
+      passwordResetModal
+    } = this.state;
+
     return (
       <ModalBox title="LOGIN" show backdropId="loginModal" closeModal={closeModal}>
         {success ? closeModal() : ''}
-
+        {passwordResetModal ? <EmailConfirmation closeModal={closeModal} /> : null}
         <div className="login">
 
           <form name="form" onSubmit={this.handleSubmit}>
@@ -73,7 +85,7 @@ export class Login extends Component {
                 placeholder="Email"
               >
                 {isSubmitted && !email
-                && <div id="emailError" className="login__error">email is required</div>
+                  && <div id="emailError" className="login__error">email is required</div>
                 }
               </InputBox>
 
@@ -90,7 +102,7 @@ export class Login extends Component {
                 placeholder="Password"
               >
                 {isSubmitted && !password
-                && <div id="passwordError" className="login__error">Password is required</div>
+                  && <div id="passwordError" className="login__error">Password is required</div>
                 }
               </InputBox>
 
@@ -101,16 +113,27 @@ export class Login extends Component {
             <div className="input-group">
               <Button btnName="Login" btnClass="login__button" btnEvent={this.handleSubmit} />
               {isLoggingIn
-              && (
-                <img
-                  alt="loading"
-                  src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="
-                />
-              )
+                && (
+                  <img
+                    alt="loading"
+                    src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="
+                  />
+                )
               }
               <i className="login__forgot__pwd">
                 {' '}
-                <Link to="/log" id="forgot">Forgot Password </Link>
+                <span
+                  id="forgot"
+                  href="/"
+                  className=""
+                  style={{ cursor: 'pointer' }}
+                  onClick={() => (this.openModalHandler())}
+                  role="button"
+                  tabIndex="0"
+                  onKeyPress={this.handleKeyPress}
+                >
+                  Forgot Password
+                </span>
                 {' '}
                 or signin with
               </i>

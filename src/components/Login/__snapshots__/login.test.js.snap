@@ -52,13 +52,21 @@ exports[`login component matches the snapshot 1`] = `
           className="login__forgot__pwd"
         >
            
-          <Link
+          <span
+            className=""
+            href="/"
             id="forgot"
-            replace={false}
-            to="/log"
+            onClick={[Function]}
+            role="button"
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+            tabIndex="0"
           >
-            Forgot Password 
-          </Link>
+            Forgot Password
+          </span>
            
           or signin with
         </i>
@@ -140,13 +148,21 @@ exports[`login component should render without crsshing 1`] = `
           className="login__forgot__pwd"
         >
            
-          <Link
+          <span
+            className=""
+            href="/"
             id="forgot"
-            replace={false}
-            to="/log"
+            onClick={[Function]}
+            role="button"
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+            tabIndex="0"
           >
-            Forgot Password 
-          </Link>
+            Forgot Password
+          </span>
            
           or signin with
         </i>

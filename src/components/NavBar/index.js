@@ -20,6 +20,7 @@ export class Navbar extends Component {
     this.state = {
       signupModal: false,
       loginModal: false,
+      openResetPasswordModal: false,
     };
   }
 
@@ -59,7 +60,6 @@ export class Navbar extends Component {
           )
         }
 
-
         <div className="navbar__branding">
           <div className="navbar__branding__name">
             <h1>
@@ -77,7 +77,6 @@ export class Navbar extends Component {
         </div>
         <div className="navbar__navigation">
           <div className="navbar__navigation__auth" id="userInfo">
-
             {user.token && (
             <ul>
 
@@ -108,42 +107,42 @@ export class Navbar extends Component {
             </ul>
 
             )
-              }
+            }
 
             {!user.token && (
 
-            <ul>
-              <li className="navbar__navigation__auth__button">
-                <span
-                  id="loginModal"
-                  href="/"
-                  className="navbar__navigation__auth__button--link"
-                  style={{ cursor: 'pointer' }}
-                  onClick={() => (this.openModalHandler('loginModal'))}
-                  role="button"
-                  tabIndex="0"
-                  onKeyPress={this.handleKeyPress}
-                >
-                  Login
-                </span>
-              </li>
+              <ul>
+                <li className="navbar__navigation__auth__button">
+                  <span
+                    id="loginModal"
+                    href="/"
+                    className="navbar__navigation__auth__button--link"
+                    style={{ cursor: 'pointer' }}
+                    onClick={() => (this.openModalHandler('loginModal'))}
+                    role="button"
+                    tabIndex="0"
+                    onKeyPress={this.handleKeyPress}
+                  >
+                    Login
+                  </span>
+                </li>
 
-              {' '}
-              <li className="navbar__navigation__auth__button">
-                <span
-                  id="signupModal"
-                  href="/"
-                  className="navbar__navigation__auth__button--link"
-                  style={{ cursor: 'pointer' }}
-                  onClick={() => (this.openModalHandler('signupModal'))}
-                  role="button"
-                  tabIndex="0"
-                  onKeyPress={this.handleKeyPress}
-                >
-Sign Up
-                </span>
-              </li>
-            </ul>
+                {' '}
+                <li className="navbar__navigation__auth__button">
+                  <span
+                    id="signupModal"
+                    href="/"
+                    className="navbar__navigation__auth__button--link"
+                    style={{ cursor: 'pointer' }}
+                    onClick={() => (this.openModalHandler('signupModal'))}
+                    role="button"
+                    tabIndex="0"
+                    onKeyPress={this.handleKeyPress}
+                  >
+                    Sign Up
+                  </span>
+                </li>
+              </ul>
             )}
 
           </div>
