@@ -1,4 +1,6 @@
-[![Build Status](https://travis-ci.com/andela/ah-frontend-dojo.svg?branch=develop)](https://travis-ci.com/andela/ah-frontend-dojo) [![Maintainability](https://api.codeclimate.com/v1/badges/bb975aa777e8d8d8909a/maintainability)](https://codeclimate.com/github/andela/ah-frontend-dojo/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/bb975aa777e8d8d8909a/test_coverage)](https://codeclimate.com/github/andela/ah-frontend-dojo/test_coverage)
+[![Build Status](https://travis-ci.com/andela/ah-frontend-dojo.svg?branch=develop)](https://travis-ci.com/andela/ah-frontend-dojo) 
+[![Maintainability](https://api.codeclimate.com/v1/badges/5b1b28eb2b53148689c9/maintainability)](https://codeclimate.com/github/andela/ah-frontend-dojo/maintainability) 
+[![Test Coverage](https://api.codeclimate.com/v1/badges/5b1b28eb2b53148689c9/test_coverage)](https://codeclimate.com/github/andela/ah-frontend-dojo/test_coverage)
 
 Authors Haven
 =======
