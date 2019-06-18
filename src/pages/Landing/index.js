@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 
 // third-party libraries
+import { ToastContainer } from 'react-toastify';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -28,8 +29,10 @@ export class LandingPage extends Component {
   render() {
     const { articles, isFetching } = this.props;
     return (
+
       // Navbar
       <div>
+        <ToastContainer autoClose={3000} />
         <div className="landing">
           <Navbar />
           <div className="banner-image" />

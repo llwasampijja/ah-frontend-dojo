@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 // 3rd party libraries
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-// import { ToastContainer, Toast } from 'react-toastify';
+import { Redirect } from 'react-router-dom';
 
 // styles
 import './PasswordReset.scss';
@@ -79,11 +79,7 @@ export class PasswordReset extends Component {
             {
               isPassordResetSuccess
                 ? (
-                  <div className="success">
-                    <p className="success__text">Password successfuly reset.</p>
-                    <p className="success__text">You can now login</p>
-                  </div>
-                  // <ToastContainer autoClose={4000} />
+                  <Redirect to="/" />
                 )
                 : (
                   <div>

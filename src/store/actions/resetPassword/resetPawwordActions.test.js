@@ -5,7 +5,6 @@ import resetPassword from 'store/actions/resetPassword';
 import {
   PASSWORD_RESET_START,
   PASSWORD_RESET_SUCCESS,
-  PASSWORD_RESET_FAILURE,
 } from 'store/actions/passwordResetTypes';
 
 jest.mock('axios');

@@ -22,7 +22,7 @@ describe('routes using memory router', () => {
 
 // test to check if the App component matches the snapshot
 describe('App Component', () => {
-  it('matches the snapshot', () => {
+  it('renders without crashing', () => {
     const component = shallow(<App />);
     expect(component.exists()).toBe(true);
   });

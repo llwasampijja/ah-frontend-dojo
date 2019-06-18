@@ -83,6 +83,22 @@ describe('Password Reset Component', () => {
     const component = shallow(<PasswordReset />);
     component.setProps({ isPassordResetSuccess: true });
 
-    expect(component.find('.success__text').length).toBe(2);
+    expect(component.find('Redirect').length).toBe(1);
+  });
+
+  it('should show a token errors', () => {
+    const component = shallow(<PasswordReset />);
+    component.setProps({ isPasswordResetError: true });
+    component.setProps({ tokenErrors: ['test error'] });
+
+    expect(component.find('.error').length).toBe(1);
+  });
+
+  it('should show a password errors', () => {
+    const component = shallow(<PasswordReset />);
+    component.setProps({ isPasswordResetError: true });
+    component.setProps({ passwordErrors: ['test error'] });
+
+    expect(component.find('.error').length).toBe(1);
   });
 });

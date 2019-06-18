@@ -1,5 +1,7 @@
 // third-party libraries
 import axios from 'axios';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
 
 // action types
 import {
@@ -11,6 +13,7 @@ import {
 } from 'store/actions/passwordResetTypes';
 import { baseURL } from 'utils';
 
+const successMsg = 'Password successfuly reset. You can now login';
 /**
  * function which returns a start action
  * @return {action}
@@ -53,7 +56,10 @@ const resetPassword = (newPassword, token) => (dispatch) => {
   const url = `${baseURL}${'/reset-password/'}${token}`;
 
   return axios.post(url, payload, headers)
-    .then((response) => { dispatch(passwordResetSuccess(response)); })
+    .then((response) => {
+      toast.success(successMsg);
+      return dispatch(passwordResetSuccess(response));
+    })
     .catch(({ response: { data } }) => {
       if (data.errors !== undefined) {
         const { errors: { password } } = data;
