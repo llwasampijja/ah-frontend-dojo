@@ -182,7 +182,7 @@ PasswordReset.defaultProps = {
   dispatchResetPassword: () => { },
 };
 
-const mapStateToProps = ({
+export const mapStateToProps = ({
   passwordResetReducer: {
     isLoading,
     isPassordResetSuccess,
@@ -198,7 +198,7 @@ const mapStateToProps = ({
   tokenErrors,
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   dispatchResetPassword: (password, token) => dispatch(resetPassword(password, token)),
 });
 

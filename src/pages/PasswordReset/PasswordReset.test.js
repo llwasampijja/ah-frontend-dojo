@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router-dom';
 import configureStore from 'redux-mock-store';
 import { shallow, mount } from 'enzyme';
-import { PasswordReset } from '.';
+import { PasswordReset, mapDispatchToProps, mapStateToProps } from '.';
 
 
 const mockStore = configureStore();
@@ -34,13 +34,6 @@ const initialState = {
 const store = mockStore(initialState);
 
 describe('Password Reset Component', () => {
-  it('should render without exploding', () => {
-    const wrapper = shallow(<PasswordReset />);
-    expect(wrapper.length).toBe(1);
-  });
-});
-
-describe('Password Reset Component', () => {
   const wrapper = mount(
     <Provider store={store}>
       <MemoryRouter>
@@ -59,6 +52,11 @@ describe('Password Reset Component', () => {
 
   const passwordResetWrapper = wrapper.find('PasswordReset');
   const buttonWrapper = wrapper.find('.password-reset__fields__field__button');
+
+  it('should render without exploding', () => {
+    const wrapper = shallow(<PasswordReset />);
+    expect(wrapper.length).toBe(1);
+  });
 
   it('should handle change', () => {
     const inputWrapper = wrapper.find('#confirmPassword');
@@ -88,7 +86,7 @@ describe('Password Reset Component', () => {
     expect(component.find('Loader').length).toBe(1);
   });
 
-  it('should show a a success message when the password is reset', () => {
+  it('should display a success message when the password is reset', () => {
     const component = shallow(<PasswordReset />);
     component.setProps({ isPassordResetSuccess: true });
 
@@ -99,6 +97,11 @@ describe('Password Reset Component', () => {
     const component = shallow(<PasswordReset />);
     component.setProps({ isPasswordResetError: true });
     component.setProps({ tokenErrors: ['test error'] });
+  });
+
+  it('should display a password reset error', () => {
+    const component = shallow(<PasswordReset />);
+    component.setProps({ isPasswordResetError: true, passwordErrors: ['Invalid password'] });
 
     expect(component.find('.error').length).toBe(1);
   });
@@ -109,5 +112,30 @@ describe('Password Reset Component', () => {
     component.setProps({ passwordErrors: ['test error'] });
 
     expect(component.find('.error').length).toBe(1);
+  });
+
+  it('should display a a token error when a token is invalid', () => {
+    const component = shallow(<PasswordReset />);
+    component.setProps({ isPasswordResetError: true, tokenErrors: ['Invalid password'] });
+
+    expect(component.find('.error').length).toBe(1);
+  });
+
+  it('should map state to props', () => {
+    const mockedState = {
+      passwordResetReducer: {
+        isLoading: true,
+      }
+    };
+
+    const state = mapStateToProps(mockedState);
+    expect(state.isLoading).toBe(true);
+  });
+
+  it('should map dispatch to props', () => {
+    const mockedDispatch = jest.fn();
+
+    mapDispatchToProps(mockedDispatch).dispatchResetPassword();
+    expect(mockedDispatch).toHaveBeenCalled();
   });
 });

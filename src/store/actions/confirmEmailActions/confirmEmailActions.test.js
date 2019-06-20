@@ -13,10 +13,15 @@ jest.mock('axios');
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
-const store = mockStore();
+let store;
 
 const mockData = { status: 'OK' };
 const email = 'bisonlou@gmail.com';
+
+beforeEach(() => {
+  store = mockStore();
+  jest.clearAllMocks();
+});
 
 it('Should send an email', async () => {
   mockAxios.post.mockImplementationOnce(() => Promise.resolve({ data: mockData }));
@@ -24,6 +29,20 @@ it('Should send an email', async () => {
   const expectedActions = [
     { type: CONFIRM_EMAIL_START },
     { type: CONFIRM_EMAIL_SUCCESS },
+  ];
+
+  await store.dispatch(confirmEmailActions(email));
+
+  expect(store.getActions()).toEqual(expectedActions);
+  expect(mockAxios.post).toHaveBeenCalledTimes(1);
+});
+
+it('Should send an email', async () => {
+  mockAxios.post.mockRejectedValueOnce();
+
+  const expectedActions = [
+    { type: CONFIRM_EMAIL_START },
+    { type: CONFIRM_EMAIL_FAILURE, error: undefined },
   ];
 
   await store.dispatch(confirmEmailActions(email));

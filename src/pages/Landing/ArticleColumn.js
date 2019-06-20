@@ -43,10 +43,10 @@ ArticleColumn.propTypes = {
       views: PropTypes.number.isRequired,
       reads: PropTypes.number.isRequired,
     }),
-    likeCount: PropTypes.arrayOf(PropTypes.shape({
+    likeCount: PropTypes.shape({
       likes: PropTypes.number.isRequired,
       dislikes: PropTypes.number.isRequired,
-    })),
+    }),
   })),
 };
 
