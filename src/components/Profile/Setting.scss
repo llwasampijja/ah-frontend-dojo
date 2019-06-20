@@ -1,0 +1,94 @@
+.main {
+  display: 'flex';
+}
+
+.edit-btn {
+  width: 40%;
+  padding: 0.5rem 2rem;
+  margin: 10px auto;
+  border: 1px solid #F34579;
+  background-color: #F34579;
+  border-radius: 25px;
+  display: block;
+  font-size: 1.2rem;
+  cursor: pointer;
+
+  &:hover {
+    outline: transparent;
+    background-color: #2D6686;
+    color: #FFFFFF;
+  }
+
+  &:focus {
+    outline: transparent;
+  }
+}
+
+.settings__edit-profile textarea { 
+  margin: 0;
+  width: 100%;
+  -webkit-appearance: none;
+  padding: .78571429rem 1rem;
+  background: #FFF;
+  border: 1px solid rgba(34,36,38,.15);
+  outline: 0;
+  color: rgba(0,0,0,.87);
+  border-radius: .28571429rem;
+  -webkit-box-shadow: 0 0 0 0 transparent inset;
+  box-shadow: 0 0 0 0 transparent inset;
+  -webkit-transition: color .1s ease,border-color .1s ease;
+  transition: color .1s ease,border-color .1s ease;
+  font-size: 1rem;
+  line-height: 1.2857;
+  resize: vertical;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;	
+}
+
+.settings__edit-profile input[type=text] {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  outline: 0;
+  width: 100%;
+  -webkit-appearance: none;
+  line-height: 1.21428571rem;
+  padding: .67857143rem 1rem;
+  font-size: 1rem;
+  background: #FFF;
+  border: 1px solid rgba(34,36,38,.15);
+  color: rgba(0,0,0,.87);
+  border-radius: .28571429rem;
+  -webkit-box-shadow: 0 0 0 0 transparent inset;
+  box-shadow: 0 0 0 0 transparent inset;
+  -webkit-transition: color .1s ease,border-color .1s ease;
+  transition: color .1s ease,border-color .1s ease;
+  margin-bottom: 0.978rem;
+}
+
+.settings__edit-profile input[type=file] {
+  font-family: 'Open Sans', sans-serif;
+  margin: auto;
+  outline: 0;
+  width: 100%;
+  -webkit-appearance: none;
+  line-height: 1.21428571rem;
+  font-size: 1rem;
+  background: #FFF;
+  color: rgba(0,0,0,.87);
+  border-radius: .28571429rem;
+  -webkit-box-shadow: 0 0 0 0 transparent inset;
+  box-shadow: 0 0 0 0 transparent inset;
+  -webkit-transition: color .1s ease,border-color .1s ease;
+  transition: color .1s ease,border-color .1s ease;
+  margin-top: 0.978rem;
+  margin-bottom: 0.978rem;
+}
+
+.image_label {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1.08rem;
+}

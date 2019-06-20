@@ -89,7 +89,9 @@ export class Navbar extends Component {
                   className="navbar__navigation__auth__button--link"
                   style={{ cursor: 'pointer' }}
                 >
-                  { user.username }
+                  <a href={`/profile/${user.username}`}>
+                    { user.username }
+                  </a>
                 </span>
               </li>
 

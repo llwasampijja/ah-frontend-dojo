@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Setting Component should match the snapshot 1`] = `
+<div
+  className="settings"
+>
+  <div
+    className="settings__edit-profile"
+  >
+    <Form
+      as="form"
+      onSubmit={[Function]}
+    >
+      <div>
+        <span
+          className="image_label"
+        >
+           Upload a profile picture
+        </span>
+        <input
+          accept="image/*"
+          className="custom-file-upload"
+          name="image"
+          onChange={[Function]}
+          placeholder="Select Profile Picture"
+          type="file"
+        />
+      </div>
+      <FormGroup
+        widths="equal"
+      >
+        <FormInput
+          as={[Function]}
+          control={[Function]}
+          defaultValue=""
+          fluid={true}
+          label="First name"
+          name="firstname"
+          onChange={[Function]}
+          placeholder="John"
+        />
+        <FormInput
+          as={[Function]}
+          control={[Function]}
+          defaultValue=""
+          fluid={true}
+          label="Last name"
+          name="lastname"
+          onChange={[Function]}
+          placeholder="Doe"
+        />
+      </FormGroup>
+      <FormTextArea
+        as={[Function]}
+        className="settings__edit-profile--textareastyled"
+        control={[Function]}
+        defaultValue=""
+        label="Bio"
+        maxLength="300"
+        name="bio"
+        onChange={[Function]}
+        placeholder="Talk about yourself."
+        rows={5}
+      />
+      <div
+        className="field"
+      >
+        <Button
+          btnClass="edit-btn"
+          btnEvent={[Function]}
+          btnName="Edit Profile"
+          id="editProfile__button"
+          type="submit"
+        />
+      </div>
+    </Form>
+  </div>
+</div>
+`;

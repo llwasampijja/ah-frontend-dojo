@@ -7,6 +7,8 @@ import passwordResetReducer from 'store/reducers/passwordResetReducer';
 import articles from './reducers/articles';
 import facebookReducer from './reducers/socialReducer/Facebook';
 import googleReducer from './reducers/socialReducer/Google';
+import profile from './reducers/profileReducer';
+
 
 const rootReducers = combineReducers({
   registerReducer,
@@ -16,6 +18,7 @@ const rootReducers = combineReducers({
   passwordResetReducer,
   facebookReducer,
   googleReducer,
+  profile,
 });
 
 export default rootReducers;

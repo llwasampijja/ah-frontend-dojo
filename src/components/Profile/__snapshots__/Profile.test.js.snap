@@ -1,0 +1,156 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Setting Component should match the snapshot 1`] = `
+<div
+  className="main"
+>
+  <div
+    className="profile-tab-menu"
+  >
+    <Tab
+      className="tab"
+      grid={
+        Object {
+          "paneWidth": 12,
+          "tabWidth": 4,
+        }
+      }
+      menu={
+        Object {
+          "pointing": true,
+          "secondary": true,
+        }
+      }
+      panes={
+        Array [
+          Object {
+            "menuItem": "Articles ",
+            "render": [Function],
+          },
+          Object {
+            "menuItem": "| Settings",
+            "render": [Function],
+          },
+        ]
+      }
+      renderActiveOnly={true}
+    />
+  </div>
+</div>
+`;
+
+exports[`Setting Component should render correctly 1`] = `
+<ProfileMain
+  authenticatedUser="nadralia"
+  match={
+    Object {
+      "params": Object {
+        "profileUser": "nadralia",
+      },
+    }
+  }
+>
+  <div
+    className="main"
+  >
+    <div
+      className="profile-tab-menu"
+    >
+      <Tab
+        className="tab"
+        grid={
+          Object {
+            "paneWidth": 12,
+            "tabWidth": 4,
+          }
+        }
+        menu={
+          Object {
+            "pointing": true,
+            "secondary": true,
+          }
+        }
+        panes={
+          Array [
+            Object {
+              "menuItem": "Articles ",
+              "render": [Function],
+            },
+            Object {
+              "menuItem": "| Settings",
+              "render": [Function],
+            },
+          ]
+        }
+        renderActiveOnly={true}
+      >
+        <div
+          className="tab"
+        >
+          <Menu
+            activeIndex={0}
+            items={
+              Array [
+                "Articles ",
+                "| Settings",
+              ]
+            }
+            onItemClick={[Function]}
+            pointing={true}
+            secondary={true}
+          >
+            <div
+              className="ui pointing secondary menu"
+            >
+              <MenuItem
+                active={true}
+                content="Articles "
+                index={0}
+                key="Articles "
+                name="Articles "
+                onClick={[Function]}
+              >
+                <a
+                  className="active item"
+                  onClick={[Function]}
+                >
+                  Articles 
+                </a>
+              </MenuItem>
+              <MenuItem
+                active={false}
+                content="| Settings"
+                index={1}
+                key="| Settings"
+                name="| Settings"
+                onClick={[Function]}
+              >
+                <a
+                  className="item"
+                  onClick={[Function]}
+                >
+                  | Settings
+                </a>
+              </MenuItem>
+            </div>
+          </Menu>
+          <TabPane
+            active={true}
+            as={[Function]}
+            attached={true}
+          >
+            <Segment
+              attached={true}
+              className="active tab"
+            >
+              <div
+                className="ui attached segment active tab"
+              />
+            </Segment>
+          </TabPane>
+        </div>
+      </Tab>
+    </div>
+  </div>
+</ProfileMain>
+`;
