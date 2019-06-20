@@ -81,6 +81,20 @@ describe('NavBar component', () => {
           email: 'email@email.com',
           token: data.login.success.user.token,
         },
+      },
+      facebookReducer: {
+        user: {
+          username: 'dojo',
+          email: 'email@social.com',
+          token: data.login.success.user.token,
+        },
+      },
+      googleReducer: {
+        user: {
+          username: 'dojo',
+          email: 'email@social.com',
+          token: data.login.success.user.token,
+        },
       }
     };
 

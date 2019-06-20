@@ -19,7 +19,7 @@ const loginRequest = isLoading => ({
 });
 
 // return user on successful login
-const loginSuccess = user => ({
+export const loginSuccess = user => ({
   type: LOGIN_SUCCESS,
   isLoading: false,
   user,

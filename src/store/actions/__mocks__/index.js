@@ -36,6 +36,20 @@ const data = {
       },
     },
   },
+  soicalAuth: {
+    success: {
+      user: {
+        auth_token: 'eyB0eJDiOiJKW1PiKCJ'
+      }
+    },
+    failure: {
+      errors: {
+        error: [
+          'We have failed to verify your credentials'
+        ]
+      }
+    }
+  }
 };
 
 export default data;

@@ -74,22 +74,8 @@ exports[`login component matches the snapshot 1`] = `
       <div
         className="login__social"
       >
-        <a
-          className="button--social-login button--facebook"
-          href="fb"
-        >
-          <i
-            className="icon fa fa-facebook"
-          />
-        </a>
-        <a
-          className="button--social-login button--linkedin"
-          href="#google"
-        >
-          <i
-            className="icon fa fa-google"
-          />
-        </a>
+        <FacebookButton />
+        <GoogleButton />
       </div>
     </form>
   </div>
@@ -170,22 +156,8 @@ exports[`login component should render without crsshing 1`] = `
       <div
         className="login__social"
       >
-        <a
-          className="button--social-login button--facebook"
-          href="fb"
-        >
-          <i
-            className="icon fa fa-facebook"
-          />
-        </a>
-        <a
-          className="button--social-login button--linkedin"
-          href="#google"
-        >
-          <i
-            className="icon fa fa-google"
-          />
-        </a>
+        <FacebookButton />
+        <GoogleButton />
       </div>
     </form>
   </div>

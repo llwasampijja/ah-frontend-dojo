@@ -15,7 +15,16 @@ const initialState = {
   isPasswordResetError: false,
   passwordErrors: [],
   tokenErrors: [],
+  facebookReducer: {
+    isFacebookLoggedIn: false,
+  },
+  googleReducer: {
+    isGoogleLoggedIn: false,
+  },
   loginReducer: {
+    user: {
+      token: '',
+    },
     username: 'charles King',
     email: 'ck@mail.com',
     token: 'hdhdjjdudhjeje',

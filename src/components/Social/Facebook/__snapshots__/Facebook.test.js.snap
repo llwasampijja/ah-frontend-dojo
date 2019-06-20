@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Facebook Login should render without errors 1`] = `
+<div
+  className="facebookbutton"
+>
+  <t
+    appId="279362183016248"
+    callback={[Function]}
+    cssClass="kep-login-facebook"
+    fields="name,email,picture"
+    icon={
+      <img
+        alt="Facebook"
+        height="30px"
+        src="https://img.icons8.com/color/48/000000/facebook-circled.png"
+        widith="30px"
+      />
+    }
+    size="metro"
+    tag="button"
+    textButton={false}
+    typeButton="button"
+  />
+</div>
+`;

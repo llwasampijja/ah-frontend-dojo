@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 
 // third party libraries
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -31,7 +31,6 @@ export class Navbar extends Component {
     logout();
   };
 
-
   openModalHandler = (modalId) => {
     this.setState(prevState => (
       { [modalId]: !prevState[modalId] }
@@ -40,8 +39,13 @@ export class Navbar extends Component {
 
   render() {
     const { signupModal, loginModal } = this.state;
-    const { user } = this.props;
-
+    const { user, isFacebookLoggedIn, isGoogleLoggedIn } = this.props;
+    if (isFacebookLoggedIn) {
+      return <Redirect to="/articles" />;
+    }
+    if (isGoogleLoggedIn) {
+      return <Redirect to="/articles" />;
+    }
     return (
       <div className="navbar">
         {
@@ -52,7 +56,7 @@ export class Navbar extends Component {
           )
         }
         {
-          loginModal && (
+          (loginModal && !isFacebookLoggedIn && !isGoogleLoggedIn) && (
             <Login
               closeModal={() => this.openModalHandler('loginModal')}
             />
@@ -171,6 +175,8 @@ Navbar.defaultProps = {
 };
 
 Navbar.propTypes = {
+  isFacebookLoggedIn: PropTypes.bool,
+  isGoogleLoggedIn: PropTypes.bool,
   logout: PropTypes.func.isRequired,
   user: PropTypes.shape({
     username: PropTypes.string,
@@ -179,9 +185,16 @@ Navbar.propTypes = {
   })
 };
 
+Navbar.defaultProps = {
+  isFacebookLoggedIn: false,
+  isGoogleLoggedIn: false,
+};
+
 export const mapStateToProps = (state) => {
   const { user } = state.loginReducer;
-  return { user };
+  const { isFacebookLoggedIn } = state.facebookReducer;
+  const { isGoogleLoggedIn } = state.googleReducer;
+  return { user, isFacebookLoggedIn, isGoogleLoggedIn };
 };
 
 export const mapDispatchToProps = dispatch => ({

@@ -18,6 +18,8 @@ import 'components/Login/Login.scss';
 
 // Modal Component
 import ModalBox from 'components/ModalBox';
+import FaceBookButton from 'components/Social/Facebook';
+import GoogleButtons from 'components/Social/Google';
 
 export class Login extends Component {
   constructor(props) {
@@ -140,12 +142,8 @@ export class Login extends Component {
             </div>
 
             <div className="login__social">
-              <a className="button--social-login button--facebook" href="fb">
-                <i className="icon fa fa-facebook" />
-              </a>
-              <a className="button--social-login button--linkedin" href="#google">
-                <i className="icon fa fa-google" />
-              </a>
+              <FaceBookButton />
+              <GoogleButtons />
 
             </div>
 

@@ -1,0 +1,16 @@
+// overiding inline css of the google button
+.googlebutton > button {
+  box-shadow: 0px 0px 0px 0px !important;
+  background-color: #FFFFFF !important;
+
+  > div {
+    background-color: #FFFFFF !important;
+    margin: 0px !important;
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  > span {
+    padding: 0px !important;
+  }
+}
