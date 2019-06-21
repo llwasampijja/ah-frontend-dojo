@@ -6,16 +6,19 @@ import { Tab } from 'semantic-ui-react';
 
 // import components
 import Settings from 'components/Profile/Settings';
+import Bookmarks from 'components/Profile/Bookmarks';
+import Articles from 'components/Profile/Articles';
 
 // import styles
 import './Profile.scss';
 
 export const ProfileMain = ({ match: { params: { profileUser } }, authenticatedUser }) => {
   const panes = [
-    { menuItem: 'Articles ', render: () => <Tab.Pane attached></Tab.Pane> },
+    { menuItem: 'Articles ', render: () => <Tab.Pane attached><Articles /></Tab.Pane> },
+    { menuItem: ' | Bookmarks ', render: () => <Tab.Pane attached><Bookmarks /></Tab.Pane> },
   ];
   if (authenticatedUser === profileUser) {
-    panes.push({ menuItem: '| Settings', render: () => <Tab.Pane attached><Settings /></Tab.Pane> });
+    panes.push({ menuItem: ' | Settings', render: () => <Tab.Pane attached><Settings /></Tab.Pane> });
   }
 
   return (

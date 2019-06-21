@@ -17,9 +17,4 @@ describe('Setting Component', () => {
     const component = shallow(<ProfileMain {...props} />);
     expect(component).toMatchSnapshot();
   });
-
-  it('should render correctly', () => {
-    const wrapper = mount(<ProfileMain {...props} />);
-    expect(wrapper).toMatchSnapshot();
-  });
 });

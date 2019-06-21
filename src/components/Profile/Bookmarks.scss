@@ -1,0 +1,92 @@
+$primary: #2D6686;
+$secondary: #E91E63;
+$secondary-light: #C98FA3;
+$purple: #431877;
+
+.bookmarks {
+  &__blank {
+    margin-top: 2rem;
+
+    &--message {
+      width: 50%;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      text-align: center;
+      color: $primary;
+    }
+  }
+
+  &__isBookmarked {
+    background-image: url("../../assets/images/icons8-bookmark-filled-50.png");
+    height: 3rem;
+    width: 3rem;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__notBookmarked {
+    background-image: url("../../assets/images/icons8-bookmark-50.png");
+    height: 3rem;
+    width: 3rem;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__list {
+    &__bookmark {
+      margin: 1rem;
+
+      &__title {
+        margin-bottom: 0.5rem;
+        font-size: 1.2rem;
+        cursor: pointer;
+        font-weight: bold;
+        color: $primary;
+
+        &--link {
+          text-decoration: none;
+          color: $purple;
+        }
+      }
+
+      &--description {
+        margin-bottom: 0.25rem;
+        width: 60%;
+        line-height: 1.2rem;
+        font-size: 0.9rem;
+      }
+
+      &--date {
+        float: left;
+        margin-left: 1rem;
+        width: 30%;
+        font-size: 0.8rem;
+      }
+
+      &--date::before {
+        content: "Bookmarked  ";
+        color: $primary;
+      }
+
+      &--author {
+        font-size: 0.8rem;
+        color: $primary;
+      }
+
+      &__remove {
+        width: 10%;
+        margin-left: 1rem;
+        margin-top: 0.6rem;
+        cursor: pointer;
+        color: $secondary-light;
+        outline: none;
+
+        &:hover {
+          color: $secondary;
+        }
+      }
+    }
+  }
+}

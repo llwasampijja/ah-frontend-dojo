@@ -6,6 +6,7 @@ import ProfilePage from 'pages/Profile';
 import PageNotFound from 'pages/Error';
 import PrivateRoute from 'routers/PrivateRoute';
 
+
 import 'assets/MainStyle.scss';
 
 class App extends Component {

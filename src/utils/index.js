@@ -45,12 +45,10 @@ export const mockArticle = (
       views: 0,
       reads: 0,
     },
-    likeCount: [
-      {
-        likes: 0,
-        dislikes: 0,
-      },
-    ],
+    likeCount: {
+      likes: 0,
+      dislikes: 0,
+    },
   });
 
 const renderComponent = component => shallow(component);

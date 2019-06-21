@@ -45,7 +45,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(jpg|gif)(\?[a-z0-9=.]+)?$/,
+        test: /\.(jpg|gif|png)(\?[a-z0-9=.]+)?$/,
         loader: 'url-loader?limit=100000',
       },
     ],
