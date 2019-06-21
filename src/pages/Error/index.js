@@ -1,9 +1,22 @@
 import React from 'react';
+// styles
+import './ErrorPageStyle.scss';
 
 const PageNotFound = () => (
-  <div>
-    <h1>Authors&apos; Haven</h1>
-    <h4>Oops, That page does not exist</h4>
+  <div className="container">
+    <div className="copy-container error-space">
+      <p className="error">
+        404
+      </p>
+      <br />
+      <p className="error1">
+        Page not found.
+      </p>
+      <p className="error2">
+        <a href="https://ah-frontend-dojo.herokuapp.com/">Go back</a>
+      </p>
+    </div>
   </div>
+
 );
 export default PageNotFound;

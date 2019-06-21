@@ -1,0 +1,70 @@
+$blue: #2D6686;
+$black: #000;
+$pink: #F00F00;
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+
+// helper
+
+.error-space {
+  // width: inherit;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+html {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+* {
+  box-sizing: inherit;
+
+  &:before, &:after {
+    box-sizing: inherit;
+  }
+}
+
+.container {
+  width: 100%;
+}
+
+.copy-container {
+  text-align: center;
+}
+
+.error {
+  font-family: 'Roboto Mono', monospace;
+  color: $blue;
+  font-size: 5rem;
+  letter-spacing: .2px;
+  margin: 0;
+}
+
+.error1 {
+  color: $black;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 3.5rem;
+  letter-spacing: .2px;
+  margin: 0;
+}
+
+.error2 {
+  color: $black;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.5rem;
+  letter-spacing: .2px;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $blue;
+}
+
+a:hover {
+  color: $pink;
+
+}
